@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Location: magento2_root/app/code/Vendorname/Extensionname/etc/adminhtml/system.xml
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="multicart_tab" translate="label" sortOrder="1000">
+            <label>MultiCart</label>
+        </tab>
+        <section id="multicart_section" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Genaral</label>
+            <tab>multicart_tab</tab>
+            <resource>OsmanSorkar_MultiCart::seller</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="vendor_role" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Vendor Role</label>
+                    <source_model>OsmanSorkar\MultiCart\Model\Config\Source\Role</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

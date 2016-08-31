@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="OsmanSorkar_MultiCart::seller" title="Seller" module="OsmanSorkar_MultiCart" sortOrder="50" parent="Magento_Sales::sales" resource="OsmanSorkar_MultiCart::seller" />
+        <add id="OsmanSorkar_MultiCart::order" title="Order" module="OsmanSorkar_MultiCart" sortOrder="0" parent="OsmanSorkar_MultiCart::seller" action="seller/order" resource="OsmanSorkar_MultiCart::order"/>
+    </menu>
+</config>

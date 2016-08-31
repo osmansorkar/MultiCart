@@ -1,0 +1,80 @@
+<?php
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Create account form template
+ *
+ * @var $block \Magento\Customer\Block\Form\Register
+ */
+?>
+<form class="form create account form-create-account" action="<?php echo $block->saveUrl(); ?>" method="post" id="form-validate" enctype="multipart/form-data" autocomplete="off">
+    <fieldset class="fieldset create info">
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Personal Information') ?></span></legend><br>
+        <div class="field required">
+            <label for="first_name" class="label"><span><?php /* @escapeNotVerified */ echo __('First Name') ?></span></label>
+            <div class="control">
+                <input type="text" name="firstname" id="first_name" value="" title="<?php /* @escapeNotVerified */ echo __('First Name') ?>" class="input-text" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field required">
+            <label for="last_name" class="label"><span><?php /* @escapeNotVerified */ echo __('Last Name') ?></span></label>
+            <div class="control">
+                <input type="text" name="lastname" id="last_name" value="" title="<?php /* @escapeNotVerified */ echo __('Last Name') ?>" class="input-text" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field required">
+            <label for="username" class="label"><span><?php /* @escapeNotVerified */ echo __('User Name') ?></span></label>
+            <div class="control">
+                <input type="text" name="username" id="username" value="" title="<?php /* @escapeNotVerified */ echo __('User Name') ?>" class="input-text" data-validate="{required:true}">
+            </div>
+        </div>
+        <div class="field required">
+            <label for="email_address" class="label"><span><?php /* @escapeNotVerified */ echo __('Email') ?></span></label>
+            <div class="control">
+                <input type="email" name="email" id="email_address" value="" title="<?php /* @escapeNotVerified */ echo __('Email') ?>" class="input-text" data-validate="{required:true, 'validate-email':true}">
+            </div>
+        </div>
+            </fieldset>
+            
+            <fieldset class="fieldset create account" data-hasrequired="<?php /* @escapeNotVerified */ echo __('* Required Fields') ?>">
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Sign-in Information') ?></span></legend><br>
+
+        <div class="field password required">
+            <label for="password" class="label"><span><?php /* @escapeNotVerified */ echo __('Password') ?></span></label>
+            <div class="control">
+                <input type="password" name="password" id="password" title="<?php /* @escapeNotVerified */ echo __('Password') ?>" class="input-text" data-validate="{required:true, 'validate-password':true}" autocomplete="off">
+            </div>
+        </div>
+        <div class="field confirmation required">
+            <label for="password-confirmation" class="label"><span><?php /* @escapeNotVerified */ echo __('Confirm Password') ?></span></label>
+            <div class="control">
+                <input type="password" name="password_confirmation" title="<?php /* @escapeNotVerified */ echo __('Confirm Password') ?>" id="password-confirmation" class="input-text" data-validate="{required:true, equalTo:'#password'}" autocomplete="off">
+            </div>
+        </div>
+    </fieldset>
+    
+        <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Create an Account') ?>"><span><?php /* @escapeNotVerified */ echo __('Create an Account') ?></span></button>
+        </div>
+    </div>
+</form>
+<script>
+require([
+    'jquery',
+    'mage/mage'
+], function($){
+
+    var dataForm = $('#form-validate');
+    
+    dataForm.mage('validation', {}).find('input:text').attr('autocomplete', 'off');
+
+});
+</script>

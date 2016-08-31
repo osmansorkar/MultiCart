@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Sales::sales">
+                    <resource id="OsmanSorkar_MultiCart::seller" title="Seller" sortOrder="10" >
+                        <resource id="OsmanSorkar_MultiCart::order" title="Order" sortOrder="40">
+                            <resource id="OsmanSorkar_MultiCart::view" title="Order View" sortOrder="10" />
+                            <resource id="OsmanSorkar_MultiCart::Shipment" title="Order Shipment" sortOrder="20" />
+                        </resource>
+                      <!--   <resource id="OsmanSorkar_Blog::category" title="Blog Category" sortOrder="50">
+                            <resource id="OsmanSorkar_Blog::category_save" title="Save Blog Category" sortOrder="10" />
+                            <resource id="OsmanSorkar_Blog::category_delete" title="Delete Blog Category" sortOrder="20" />
+                        </resource> -->
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
