@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © 2015 Magento. All rights reserved.
+ * Copyright ï¿½ 2015 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace OsmanSorkar\MultiCart\Sales\Block\Adminhtml\Order\View;
@@ -32,7 +32,7 @@ class Items extends \Magento\Sales\Block\Adminhtml\Items\AbstractItems
 		$this->productFactory=$productFactory;
 		$this->adminSession=$adminSession;
 	}
-			
+
     /**
      * Retrieve required options from parent
      *
@@ -53,11 +53,12 @@ class Items extends \Magento\Sales\Block\Adminhtml\Items\AbstractItems
      *
      * @return Collection
      */
+
     public function getItemsCollection()
     {
         return $this->getOrder()->getItemsCollection();
     }
     public function getUserAllProductId(){
-    	return $this->profileFactory->create()->loadProfileById($this->adminSession->getUser()->getId())->getAllProductId($this->productFactory);
+        return $this->profileFactory->create()->loadProfileById($this->adminSession->getUser()->getId())->getAllProductId($this->productFactory);
     }
 }
